@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Essa linha faz o site funcionar bem no celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de César Santos, desenvolvedor web em evolução para Full Stack.">
+  <title>César Santos | Desenvolvedor Web</title>
+
+  <!-- Liga o arquivo de estilo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="#inicio" class="logo">César<span>Santos</span></a>
+
+      <!-- Botão que só aparece no celular -->
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre Mim</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO (INÍCIO) ================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero-conteudo">
+        <div class="hero-texto">
+          <p class="hero-saudacao">Bem-vindo ao meu portfólio</p>
+          <h1>Olá, sou <span class="destaque">César Santos</span></h1>
+          <h2>Desenvolvedor Web em evolução para Full Stack</h2>
+          <p>
+            Eu crio sites e pequenos sistemas para a web usando HTML, CSS e JavaScript.
+            Estou sempre estudando e praticando para entregar soluções simples, organizadas e que funcionam.
+          </p>
+
+          <div class="hero-botoes">
+            <a href="#projetos" class="botao botao-principal">Ver meus projetos</a>
+            <a href="#contato" class="botao botao-secundario">Entrar em contato</a>
+          </div>
+        </div>
+
+        <!-- Avatar: troque as letras por uma <img> com sua foto quando quiser -->
+        <div class="hero-foto">
+          <div class="avatar">CS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOBRE MIM ================= -->
+    <section id="sobre" class="secao">
+      <div class="container">
+        <h2 class="titulo-secao">Sobre <span class="destaque">Mim</span></h2>
+
+        <div class="sobre-texto escondido">
+          <p>
+            Eu me apaixonei por programação pela possibilidade de transformar uma ideia em algo que as pessoas
+            realmente podem usar. Comecei a estudar tecnologia para mudar de carreira e, desde então, aprender
+            virou parte da minha rotina.
+          </p>
+          <p>
+            Gosto de criar soluções digitais que ajudam pequenos negócios, como sites, páginas de apresentação
+            e sistemas de agendamento. Procuro escrever um código limpo, entender o porquê de cada coisa e
+            melhorar um pouco a cada projeto.
+          </p>
+          <p>
+            Hoje meu foco é o desenvolvimento front-end, e meu objetivo é evoluir para Full Stack,
+            aprendendo também o lado do servidor e dos bancos de dados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HABILIDADES ================= -->
+    <section id="habilidades" class="secao secao-escura">
+      <div class="container">
+        <h2 class="titulo-secao">Minhas <span class="destaque">Habilidades</span></h2>
+
+        <div class="grade-habilidades">
+          <div class="cartao-habilidade escondido">
+            <h3>HTML5</h3>
+            <p>Estrutura de páginas com tags semânticas.</p>
+          </div>
+          <div class="cartao-habilidade escondido">
+            <h3>CSS3</h3>
+            <p>Flexbox, Grid, animações e responsividade.</p>
+          </div>
+          <div class="cartao-habilidade escondido">
+            <h3>JavaScript</h3>
+            <p>Interatividade, manipulação do DOM e validações.</p>
+          </div>
+          <div class="cartao-habilidade escondido">
+            <h3>Design Responsivo</h3>
+            <p>Sites que funcionam em celular, tablet e computador.</p>
+          </div>
+          <div class="cartao-habilidade escondido">
+            <h3>Git e GitHub</h3>
+            <p>Controle de versão e armazenamento dos meus projetos.</p>
+          </div>
+          <div class="cartao-habilidade escondido">
+            <h3>Fundamentos de Back-end</h3>
+            <p>Em estudo: consumo de APIs REST e noções de servidor e banco de dados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section id="projetos" class="secao">
+      <div class="container">
+        <h2 class="titulo-secao">Meus <span class="destaque">Projetos</span></h2>
+
+        <div class="grade-projetos">
+
+          <!-- Projeto 1 -->
+          <article class="cartao-projeto escondido">
+            <h3>Dashboard de Clientes</h3>
+            <p>
+              Painel para visualizar e organizar informações de clientes de forma clara,
+              com layout responsivo.
+            </p>
+            <ul class="tecnologias">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="projeto-botoes">
+              <a href="#" data-link="dashboardDemo" class="botao botao-principal botao-pequeno">Ver projeto</a>
+              <a href="#" data-link="dashboardCodigo" class="botao botao-secundario botao-pequeno">Código</a>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="cartao-projeto escondido">
+            <h3>Sistema de Agendamento</h3>
+            <p>
+              Sistema para pequenos negócios onde o cliente escolhe serviço, data e horário.
+            </p>
+            <ul class="tecnologias">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="projeto-botoes">
+              <a href="#" data-link="agendamentoDemo" class="botao botao-principal botao-pequeno">Ver projeto</a>
+              <a href="#" data-link="agendamentoCodigo" class="botao botao-secundario botao-pequeno">Código</a>
+            </div>
+          </article>
+
+          <!-- Projeto 3 -->
+          <article class="cartao-projeto escondido">
+            <h3>Landing Page Profissional</h3>
+            <p>
+              Página de apresentação focada em mostrar um serviço e levar o visitante a entrar em contato.
+            </p>
+            <ul class="tecnologias">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="projeto-botoes">
+              <a href="#" data-link="landingDemo" class="botao botao-principal botao-pequeno">Ver projeto</a>
+              <a href="#" data-link="landingCodigo" class="botao botao-secundario botao-pequeno">Código</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section id="contato" class="secao secao-escura">
+      <div class="container">
+        <h2 class="titulo-secao">Vamos <span class="destaque">conversar?</span></h2>
+
+        <div class="contato-conteudo">
+
+          <!-- novalidate: desliga a validação padrão do navegador, a gente faz a nossa no JS -->
+          <form id="formulario" class="formulario escondido" novalidate>
+            <div class="campo">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome">
+              <span class="erro" id="erroNome"></span>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+              <span class="erro" id="erroEmail"></span>
+            </div>
+
+            <div class="campo">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+              <span class="erro" id="erroMensagem"></span>
+            </div>
+
+            <button type="submit" class="botao botao-principal">Enviar mensagem</button>
+            <p class="resultado" id="resultado" aria-live="polite"></p>
+          </form>
+
+          <div class="contato-links escondido">
+            <p>Prefere falar direto? Me chame por aqui:</p>
+            <a href="#" data-link="whatsapp" class="botao botao-whatsapp">Chamar no WhatsApp</a>
+            <a href="#" data-link="github" class="botao botao-secundario">GitHub</a>
+            <a href="#" data-link="linkedin" class="botao botao-secundario">LinkedIn</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="rodape">
+    <p>© <span id="ano"></span> César Santos. Feito com HTML, CSS e JavaScript.</p>
+  </footer>
+
+  <!-- O script fica no final para o HTML já estar carregado quando ele rodar -->
+  <script src="script.js"></script>
+</body>
+</html>

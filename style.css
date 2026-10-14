@@ -1,0 +1,531 @@
+/* ========== VARIÁVEIS (as cores ficam todas aqui) ========== */
+/* Para trocar as cores do site, mude só estes valores */
+:root {
+  --fundo: #0a0f1f;          /* azul-marinho bem escuro */
+  --fundo-claro: #111a30;    /* um pouco mais claro, para as seções alternadas */
+  --cartao: #16213d;         /* fundo dos cartões */
+  --azul: #3b82f6;
+  --roxo: #8b5cf6;
+  --texto: #e5e7eb;
+  --texto-suave: #a5b0c5;
+}
+
+/* ========== RESET BÁSICO ========== */
+/* Tira as margens padrão do navegador para a gente controlar tudo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* o padding não aumenta o tamanho da caixa */
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Centraliza o conteúdo e limita a largura */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Palavras coloridas nos títulos */
+.destaque {
+  background: linear-gradient(90deg, var(--azul), var(--roxo));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ========== CABEÇALHO ========== */
+.cabecalho {
+  position: fixed; /* fica parado no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 15, 31, 0.95);
+  border-bottom: 1px solid #1f2a47;
+  z-index: 100;
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--texto);
+}
+
+.logo span {
+  color: var(--azul);
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: var(--texto-suave);
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: var(--azul);
+}
+
+/* O botão do menu fica escondido no computador */
+.botao-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--texto);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ========== BOTÕES ========== */
+.botao {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.botao:hover {
+  transform: translateY(-3px); /* sobe um pouquinho */
+}
+
+.botao-principal {
+  background: linear-gradient(90deg, var(--azul), var(--roxo));
+  color: white;
+}
+
+.botao-principal:hover {
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+}
+
+.botao-secundario {
+  border-color: var(--azul);
+  color: var(--azul);
+  background-color: transparent;
+}
+
+.botao-secundario:hover {
+  background-color: var(--azul);
+  color: white;
+}
+
+.botao-whatsapp {
+  background-color: #1fa855;
+  color: white;
+}
+
+.botao-pequeno {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+
+/* Botão de link que ainda não foi configurado */
+.desativado {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.desativado:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px; /* espaço do cabeçalho fixo */
+}
+
+.hero-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-texto {
+  flex: 1;
+}
+
+.hero-saudacao {
+  color: var(--azul);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.4rem;
+  color: var(--texto-suave);
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.hero-texto > p:not(.hero-saudacao) {
+  color: var(--texto-suave);
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-foto {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--azul), var(--roxo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.35);
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Animação leve: o avatar sobe e desce devagar */
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ========== SEÇÕES (parte comum) ========== */
+.secao {
+  padding: 90px 0;
+}
+
+.secao-escura {
+  background-color: var(--fundo-claro);
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 45px;
+}
+
+/* Quando o menu leva até a seção, o título não fica escondido atrás do cabeçalho */
+section {
+  scroll-margin-top: 70px;
+}
+
+/* ========== SOBRE ========== */
+.sobre-texto {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.sobre-texto p {
+  margin-bottom: 18px;
+}
+
+/* ========== HABILIDADES ========== */
+.grade-habilidades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.cartao-habilidade {
+  background-color: var(--cartao);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #22305a;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.cartao-habilidade:hover {
+  transform: translateY(-6px);
+  border-color: var(--roxo);
+}
+
+.cartao-habilidade h3 {
+  color: var(--azul);
+  margin-bottom: 8px;
+}
+
+.cartao-habilidade p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+/* ========== PROJETOS ========== */
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.cartao-projeto {
+  background-color: var(--cartao);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #22305a;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao-projeto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.cartao-projeto h3 {
+  margin-bottom: 10px;
+}
+
+.cartao-projeto p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tecnologias li {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--azul);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.projeto-botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* empurra os botões para o fim do cartão */
+}
+
+/* ========== CONTATO ========== */
+.contato-conteudo {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--fundo);
+  border: 2px solid #22305a;
+  border-radius: 8px;
+  color: var(--texto);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+/* Classe que o JavaScript coloca quando o campo está errado */
+.campo-invalido {
+  border-color: #ef4444 !important;
+}
+
+.erro {
+  display: block;
+  color: #f87171;
+  font-size: 0.85rem;
+  min-height: 20px;
+  margin-top: 4px;
+}
+
+.resultado {
+  margin-top: 15px;
+  color: var(--texto-suave);
+}
+
+.contato-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.contato-links p {
+  color: var(--texto-suave);
+}
+
+/* ========== RODAPÉ ========== */
+.rodape {
+  text-align: center;
+  padding: 25px 0;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  border-top: 1px solid #1f2a47;
+}
+
+/* ========== ANIMAÇÃO AO ROLAR A PÁGINA ========== */
+/* Antes de aparecer: invisível e um pouco mais para baixo */
+.escondido {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+/* O JavaScript troca "escondido" por "aparecer" quando o elemento entra na tela */
+.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVO ========== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grade-habilidades,
+  .grade-projetos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contato-conteudo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celular */
+@media (max-width: 700px) {
+  .botao-menu {
+    display: block;
+  }
+
+  /* O menu vira uma lista que fica escondida até clicar no botão */
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--fundo);
+    border-bottom: 1px solid #1f2a47;
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu li {
+    text-align: center;
+  }
+
+  .menu a {
+    display: block;
+    padding: 15px;
+  }
+
+  .hero-conteudo {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-botoes {
+    justify-content: center;
+  }
+
+  .hero-texto > p:not(.hero-saudacao) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
+  }
+
+  .grade-habilidades,
+  .grade-projetos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Respeita quem prefere sem animações (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .escondido {
+    opacity: 1;
+    transform: none;
+  }
+}
